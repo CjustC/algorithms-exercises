@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    // Write a JavaScript program which prompts the user for a number and console.logs that number as a string with dashes (-) between each two odd digits. For example if the user types 0253697 the output should be “025-369-7”.
+
+    //var input = prompt("number?"); // user input
+        var input = "80253697";
+
+        var arr = input.split(""); // turn into array
+        var result = "";
+
+        console.log(arr);
+
+        for(var i = 0; i < arr.length; i++) { 
+            var arrNum = parseFloat(arr[i]); // make element an integer
+            var arrNext = parseFloat(arr[i + 1]) // get the next number
+
+            if(arrNum == arr[arr.length - 1]) { 
+                result += arrNum; // put array back together
+                break;
+            }
+
+
+            if(arrNum % 2 !== 0 && arrNext  % 2 !== 0) { //  if both are ODD  ** look at lastIndexOf and indexOf
+                result += arrNum + "-"; // += means concatenate -- concatenate because 'result' is a string
+            } else {
+                result += arrNum; // put numbers back together
+            }
+        }
+
+        console.log(result);
+
+
+    </script>
+
+
+
+    
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+		var done = false; // new game
+
+		// Give directions to user
+		prompt("Think of a number between 1 and 100.\n I will try to guess your number.\n Answer 'y' = yes, 'l' = Low, or 'h' = High.\n \nType anything to begin the game.")
+
+		while (!done) { // While not done, play game
+			var guessed = false; // computer guess
+
+			var min = parseFloat(1);
+			var max = parseFloat(100);
+
+			while(!guessed) { // while guess is true
+				var num = Math.floor(0.5 * (min + max)); // start with 1/2 of max as a starting point
+				// var rand = Math.floor(Math.random() * (max - min + min))
+				
+				var input = prompt("Is " + num + " your number?\n Answers: y = yes, l = low, h = high").toLowerCase(); // options: H (too high), L (too low), Y (exact number)  make sure answer is lower case
+
+				if (input === "y") {
+				alert("Great! Your number is " + num); // guess is correct
+
+				guessed = true;
+
+				} else if (input === "h") { // Number is too high
+					max = num;
+					// replace with the formula but use - min at the end
+
+				} else { // Number is too Low
+					min = num
+				}
+
+			}
+
+			var isDone = prompt("Do you want to play again? y/n"); // ask if user wants to play again
+			if (isDone === "n") {
+				done = true;
+			}
+		}
+
+	</script>
+</body>
+</html>
