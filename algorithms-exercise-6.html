@@ -24,74 +24,59 @@
 
 	while (!done) { // While not done, play game
 		while (position === 0) { // starting position - Center Room
-
 			var input = prompt("You are in the Center room of a three room game. \nThe object is to exit the North Room, but there is a Dragon in the North Room.\nYou can't pass the dragon without a shield. \n \nType 'go north', 'go east', 'go south', or 'go west' to move. \n Which direction would you like to go.").toLowerCase(); // make user input lower case
 
 			if (input === "go north" || input === "north") {
 		    	alert("The door slowly opens to reveal a beastly Dragon in the center of the room! The beast's begins to snort as he stands to his feet. Bam! You slam the door and barely escape the purple flames!");
 		    	var position = 0; // position Center Room
-
 		    } else if (input === "go west" || input === "west") {
 		        alert("You walk west and see a large wooden door slowly opening.");
 		        position = 2; // position West Room
-
 		    } else {
 		        alert("Your choice does not fare well. Please choose wisely next time.");
 		         position = 0; // position Center Room
         	} 
 
         	while (position === 2) { // West Room
-
 	        	var has_shield = prompt("The door opens revealing a black shield with 'Quel fara' engraved in gold below a Lion embellished in the center of the shield. \n What would you like to do? Do you get the shield, or leave the room?").toLowerCase(); // make user input lower case
-
 		        if (has_shield === "get shield" || has_shield === "get the shield") { // get the Sheild
 		        	alert("You have the sheild! You walk back to the Center room, shield in hand and ready for battle. ");
-
 		            position = 3; // position Center Room with Shield
 		            //has_shield = 1; // shield = true -Check- not really using this variable at the moment
-
 		        } else if (has_shield === "leave room" || has_shield ===  "leave the room") {
 		            alert("Seriously! You just left the enchanted shield and walked back into the Center Room! \nHow will you get past the Dragon?")
 		            var position = 0;
-
 		        } else {
 		            alert("You are foolish");
-
 		            position = 2; // loop back to top
 		        }
 
 		        while(position === 3 ) { // Back in Center room
             		input = prompt("You're back in the Center Room again. Going North is a dragon but you now have the shield! Going West, ...well, maybe you liked the scenery in the West room.").toLowerCase(); // make user input lower case
-      				
       				if (input === "go north" || input === "north") {
             			alert("You are approaching the North Door. Are you sure this is the way? What would you like to do?");
            				var position = 4;
-
         			} else if (input === "go west" || input === "west") {
                 		alert("You walk to the west door. Are you sure you want to enter this room?");
                 		var position = 2; // West Room
-
                		} else {
                     	alert("Is there a spell cast on you, because you are choosing unwisely.");
-
                     	position = 3; // loop back to top
                 	}
             
 		            while(position === 4) { // Fight Dragon
 		                input = prompt("The heavy metal door opens. The Dragon raises his long neck, pulling back his head as he opens his large mouth and breathes purple fire! The shield is your protector. \nYou raise the shield causing the Dragon to tremble and retreat to a corner of the room revealing a golden door.\n You can retreat back to the Center Room to the South or proceed to the North door. \n What would you like to do?").toLowerCase(); // make user input lowercase
-
 		                if (input === "north" || input === "proceed") {
 		                    alert("Congratulations, you have won the game and the kingdom is saved!")
-
 		                    position = -1; // will drop out of loop and ask if player wants to play a new game
-
 		                } else if (input === "go back" || input === "south") {
 		                    alert("Coward! How dare you retreat to the Center Room!")
 		                    var position = 3;
-		                }
-		            } // end while - position = 4
+		            	}
+
+		        	} // end while - position = 4
             	} // end while  - position = 3
-		    } // end while for postion = 2
+			} // end while for postion = 2
 		} // end while - position = 0
 		
 		var isDone = prompt("Do you want to play again? y/n"); // ask if user wants to play again
