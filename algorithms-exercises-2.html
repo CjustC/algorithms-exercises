@@ -9,14 +9,10 @@
 	<script>
 		//If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1500.
 
-
-		var arr = []; // empty array -- an array is not really needed for this program
-
 		var sum = 0; // variable
 
 		for (var i = 1; i < 1500; i++) { // start @ position 1, conditon is up to 1500, will repeat until 1500; 
-		    if (i % 3 === 0 || i % 5 === 0) { // if i can be divided by 3 with no remainder OR i can be divided by 5 with no remainder
-		        arr.push(i); // append each number to the arr 
+		    if (i % 3 === 0 || i % 5 === 0) { // if i can be divided by 3 with no remainder OR i can be divided by 5 with no remainder 
 		        sum += i; //  add sum to i and put result in the left opperand, basically, add what is in sum to the new element in i
 		    }
 		    //console.log(sum, "in loop");

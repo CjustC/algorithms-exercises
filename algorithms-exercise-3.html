@@ -19,25 +19,38 @@
 		//			curnNum = result  -- move result into currNum
 		// =================================================================== //
 
-		 var prevNum = 0; // 
-		 var currNum = 1;
-		 var sum = 0; // variable to track the sum
-
-		while(currNum < 2000000) {
-
-			if(currNum % 2 !== 0) {  // Odd numbers only
-				console.log("Result: ",currNum);
-				sum += currNum; // if it is odd, add to result (same as sum = sum + i)
+		
+		var fib1 = 1; // current number
+		var fib2 = 1; // previous number
+		var sum = 0; // create variable that will hold the sum of all the odd fib #s
+		
+		for (var  i = 1 ; fib1 < 2000000; i++ ) { // loop until 2 million
+			if(fib1 % 2 !== 0) {  // Odd numbers only
+				sum += fib1; // if fib is odd, add to sum
 			}
-			var result = prevNum + currNum; // new variable to 
 
-					// Update existing variables per the formula
-			prevNum = currNum;
-
-			currNum = result;
+			var temp = fib2; // move previous number to temp
+			
+			fib2 = fib1; // move the current Fib into the previous Fib
+			fib1 = fib2 + temp; // add the previous Fib to the temp Fib
 		}
 
-		console.log("total sum = ", sum); // print sum
+		console.log(sum); // print sum
+
+		
+
+
+		// var fib1 = 1;
+		// var fib2 = 1;
+
+		// for (var  i = 0 ; i < 10; i++ ) {
+		// 	var temp = fib2;
+		// 	fib2 = fib1;
+		// 	fib1 = fib2 + temp;
+		// 	console.log(fib2);
+		// }
+
+
 
 	</script>
 
